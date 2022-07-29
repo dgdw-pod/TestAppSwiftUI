@@ -18,8 +18,17 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
+            ZStack {
+                Color.clear                .clipShape(Circle())
+                    .overlay {
+                        Circle().stroke(.orange, lineWidth: 4)
+                    }
+                    .frame(width: 200, height: 200)
+            }
             Text("Name: " + self.viewModel.getName())
-                .padding()
+                .font(.subheadline)
+                .padding(.top, 20)
+                .padding(.bottom, 48)
             Button("Logout") {
                 self.viewModel.logout()
             }

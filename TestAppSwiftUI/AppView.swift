@@ -19,7 +19,7 @@ struct AppView: View {
     var body: some View {
         ZStack {
             if(self.viewModel.isBusy) {
-                ProgressView()
+                ProgressIndicatorView()
             } else if(self.viewModel.isLoggedIn) {
                 ProfileView(viewModel: viewModel.getProfileViewModel())
             } else {
