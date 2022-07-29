@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ProgressIndicatorView: View {
+    private let progressTint = Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255)
+    
     var body: some View {
         ProgressView()
-            .scaleEffect(x: 2, y:2)
+            .progressViewStyle(CircularProgressViewStyle(tint: self.progressTint))
+            .scaleEffect(2, anchor: .center)
     }
 }
 

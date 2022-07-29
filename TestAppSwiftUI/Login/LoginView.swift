@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    private let buttonColour = Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255)
+    
     @ObservedObject private var viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -20,7 +22,7 @@ struct LoginView: View {
         }
         .padding(.horizontal, 30)
         .padding(.vertical, 10)
-        .background(Color.blue)
+        .background(self.buttonColour)
         .foregroundColor(Color.white)
         .cornerRadius(10)
     }

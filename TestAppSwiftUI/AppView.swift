@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AppView: View {
+    private let headerColour = Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255)
+    
     @ObservedObject private var viewModel: AppViewModel
     
     init(viewModel: AppViewModel) {
@@ -15,14 +17,27 @@ struct AppView: View {
     }
     
     var body: some View {
-        if(self.viewModel.isBusy) {
-            ProgressView()
-        } else if(self.viewModel.isLoggedIn) {
-            ProfileView(viewModel: viewModel.getProfileViewModel())
-        } else {
-            LoginView(viewModel: viewModel.getLoginViewModel())
+        ZStack {
+            if(self.viewModel.isBusy) {
+                ProgressView()
+            } else if(self.viewModel.isLoggedIn) {
+                ProfileView(viewModel: viewModel.getProfileViewModel())
+            } else {
+                LoginView(viewModel: viewModel.getLoginViewModel())
+            }
+            
+            VStack {
+                ZStack {
+                    self.headerColour.frame(height: 100)
+                        .edgesIgnoringSafeArea(.all)
+                    Text("OAuth SwiftUI Demo")
+                        .foregroundColor(Color.white)
+                        .fontWeight(.bold)
+                        .offset(y: -25)
+                }
+                Spacer()
+            }
         }
-        
     }
 }
 
