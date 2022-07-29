@@ -1,0 +1,25 @@
+PODS:
+  - AppAuth (1.5.0):
+    - AppAuth/Core (= 1.5.0)
+    - AppAuth/ExternalUserAgent (= 1.5.0)
+  - AppAuth/Core (1.5.0)
+  - AppAuth/ExternalUserAgent (1.5.0):
+    - AppAuth/Core
+  - SwiftCoroutine (2.1.11)
+
+DEPENDENCIES:
+  - AppAuth
+  - SwiftCoroutine
+
+SPEC REPOS:
+  trunk:
+    - AppAuth
+    - SwiftCoroutine
+
+SPEC CHECKSUMS:
+  AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
+  SwiftCoroutine: b584780401083a0c41323ef1af07c2effe369dce
+
+PODFILE CHECKSUM: 09ae82f0f5fff0103ed20bee9942801512f00333
+
+COCOAPODS: 1.11.3
